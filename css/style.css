@@ -2306,6 +2306,17 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Scroll offset for anchor links to account for fixed header */
+:target {
+  scroll-margin-top: 80px;
+}
+
+#werkplek,
+#mijn-project,
+#documentatie {
+  scroll-margin-top: 100px;
+}
+
 .header.scrolled {
   background: rgba(10, 1, 25, 1);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -2723,6 +2734,8 @@ body {
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
+   
+
 }
 
 .sfeerbeelden__image {
@@ -2985,5 +2998,342 @@ body {
 .documentatie__img:hover {
   border-color: #00bfe7;
   box-shadow: 0 5px 15px rgba(0, 191, 231, 0.3);
+}
+
+/*======================
+  Kijkje achter de schermen Section
+=======================*/
+.kijkje-achter-de-schermen {
+  background: #100028;
+  padding: 100px 0;
+}
+
+.kijkje-achter-de-schermen .section-title {
+  margin-bottom: 50px;
+}
+
+.kijkje-achter-de-schermen .section-title.center-title {
+  text-align: center;
+}
+
+.kijkje-achter-de-schermen .section-title.center-title h2:after {
+  right: 0;
+  margin: 0 auto;
+}
+
+.kijkje-achter-de-schermen .section-title span {
+  color: #ffffff;
+  display: block;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.kijkje-achter-de-schermen .section-title h2 {
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.kijkje-achter-de-schermen .section-title h2:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 70px;
+  background: #00bfe7;
+  content: "";
+}
+
+.kijkje-achter-de-schermen .section-title.center-title h2:after {
+  right: 0;
+  margin: 0 auto;
+  left: 0;
+}
+
+/* Section Subtitle */
+.kijkje-achter-de-schermen .section-subtitle {
+  margin-bottom: 30px;
+  padding-top: 40px;
+}
+
+.kijkje-achter-de-schermen .section-subtitle h3 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.kijkje-achter-de-schermen .section-subtitle h3:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 50px;
+  background: #00bfe7;
+  content: "";
+}
+
+/* Project Cards in Kijkje Section */
+.kijkje-achter-de-schermen .project__card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  height: 100%;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+}
+
+.kijkje-achter-de-schermen .project__card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 191, 231, 0.3);
+}
+
+.kijkje-achter-de-schermen .project__card h4 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.kijkje-achter-de-schermen .project__card p {
+  color: #adadad;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.kijkje-achter-de-schermen .project__card .werkplek__img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(0, 191, 231, 0.3);
+  transition: all 0.3s ease;
+}
+
+.kijkje-achter-de-schermen .project__card .werkplek__img:hover {
+  border-color: #00bfe7;
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 191, 231, 0.3);
+}
+
+.kijkje-achter-de-schermen .project__card .about__logo-img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(0, 191, 231, 0.3);
+}
+
+/* Project Card Icon */
+.kijkje-achter-de-schermen .project__card__icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(0, 191, 231, 0.2);
+  border-radius: 50%;
+  line-height: 70px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.kijkje-achter-de-schermen .project__card__icon i {
+  font-size: 30px;
+  color: #00bfe7;
+}
+
+/* Project Card List */
+.kijkje-achter-de-schermen .project__card__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.kijkje-achter-de-schermen .project__card__list li {
+  color: #00bfe7;
+  font-size: 14px;
+  padding: 5px 12px;
+  background: rgba(0, 191, 231, 0.1);
+  border-radius: 20px;
+}
+
+.kijkje-achter-de-schermen .project__card__list li i {
+  margin-right: 5px;
+}
+
+/* Project Goals */
+.kijkje-achter-de-schermen .project__goals {
+  background: rgba(0, 191, 231, 0.1);
+  border: 1px solid rgba(0, 191, 231, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.kijkje-achter-de-schermen .project__goals h4 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.kijkje-achter-de-schermen .project__goals ul {
+  list-style: none;
+  padding: 0;
+}
+
+.kijkje-achter-de-schermen .project__goals ul li {
+  color: #adadad;
+  padding: 12px 0;
+  padding-left: 35px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.kijkje-achter-de-schermen .project__goals ul li:last-child {
+  border-bottom: none;
+}
+
+.kijkje-achter-de-schermen .project__goals ul li i {
+  color: #00bfe7;
+  position: absolute;
+  left: 0;
+  top: 14px;
+}
+
+/* About Card in Kijkje Section */
+.kijkje-achter-de-schermen .about__card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.kijkje-achter-de-schermen .about__card h4 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.kijkje-achter-de-schermen .about__card p {
+  color: #adadad;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.kijkje-achter-de-schermen .about__card strong {
+  color: #00bfe7;
+}
+
+/* About List in Kijkje */
+.kijkje-achter-de-schermen .about__list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.kijkje-achter-de-schermen .about__list li {
+  color: #adadad;
+  padding: 10px 0;
+  padding-left: 30px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.kijkje-achter-de-schermen .about__list li:last-child {
+  border-bottom: none;
+}
+
+.kijkje-achter-de-schermen .about__list li i {
+  color: #00bfe7;
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+
+/* Documentatie Images */
+.kijkje-achter-de-schermen .documentatie__img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-right: 15px;
+  border: 2px solid rgba(0, 191, 231, 0.3);
+  transition: all 0.3s ease;
+}
+
+.kijkje-achter-de-schermen .documentatie__img:hover {
+  border-color: #00bfe7;
+  box-shadow: 0 5px 15px rgba(0, 191, 231, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Project Screenshot */
+.kijkje-achter-de-schermen .project__screenshot {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 2px solid rgba(0, 191, 231, 0.3);
+  transition: all 0.3s ease;
+}
+
+.kijkje-achter-de-schermen .project__screenshot:hover {
+  border-color: #00bfe7;
+  transform: scale(1.02);
+}
+
+/* Responsive adjustments for kijkje section */
+@media only screen and (max-width: 991px) {
+  .kijkje-achter-de-schermen {
+    padding: 80px 0;
+  }
+  
+  .kijkje-achter-de-schermen .project__card .werkplek__img {
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .kijkje-achter-de-schermen {
+    padding: 60px 0;
+  }
+  
+  .kijkje-achter-de-schermen .section-subtitle h3 {
+    font-size: 22px;
+  }
+  
+  .kijkje-achter-de-schermen .project__card {
+    padding: 20px;
+  }
+  
+  .kijkje-achter-de-schermen .project__card .werkplek__img {
+    height: 180px;
+  }
+  
+  .kijkje-achter-de-schermen .documentatie__img {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }
 
