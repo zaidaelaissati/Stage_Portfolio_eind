@@ -42,43 +42,45 @@
             // Get the filter value
             var filterValue = $(this).data('filter');
             
-            // Filter the blog posts - use CSS display property
-            $('.blog__post').each(function () {
+            // Get all blog posts
+            var $posts = $('.blog__posts .blog__post');
+            
+            // Filter the blog posts
+            $posts.each(function () {
                 var postTags = $(this).data('tags');
+                var $post = $(this);
+                
+                if (!postTags) {
+                    // If no tags, show post only if filter is 'all'
+                    if (filterValue === 'all') {
+                        $post.removeClass('hidden-post');
+                        $post.show();
+                    } else {
+                        $post.addClass('hidden-post');
+                        $post.hide();
+                    }
+                    return;
+                }
+                
+                // Split tags by comma and trim whitespace
+                var tagsArray = postTags.split(',').map(function(tag) {
+                    return tag.trim();
+                });
                 
                 if (filterValue === 'all') {
                     // Show all posts
-                    $(this).css('display', 'block');
-                } else if (postTags && postTags.indexOf(filterValue) !== -1) {
+                    $post.removeClass('hidden-post');
+                    $post.show();
+                } else if (tagsArray.indexOf(filterValue) !== -1) {
                     // Show post if it has the selected tag
-                    $(this).css('display', 'block');
+                    $post.removeClass('hidden-post');
+                    $post.show();
                 } else {
                     // Hide post
-                    $(this).css('display', 'none');
+                    $post.addClass('hidden-post');
+                    $post.hide();
                 }
             });
-            
-            // Reinitialize carousel after filtering
-            if ($('.blog__slider').length > 0) {
-                $('.blog__slider').owlCarousel('destroy');
-                $('.blog__slider').owlCarousel({
-                    loop: true,
-                    margin: 30,
-                    items: 1,
-                    dots: true,
-                    dotsEach: 1,
-                    smartSpeed: 1200,
-                    autoHeight: true,
-                    autoplay: false,
-                    nav: true,
-                    navText: ['<span class="arrow_left"></span>', '<span class="arrow_right"></span>'],
-                    responsive: {
-                        992: { items: 1 },
-                        768: { items: 1 },
-                        320: { items: 1 }
-                    }
-                });
-            }
         });
     });
 

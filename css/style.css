@@ -3349,6 +3349,10 @@ body {
   padding: 0 15px;
 }
 
+.blog__post.hidden-post {
+  display: none !important;
+}
+
 /* Slider dots styling */
 .blog__slider.owl-carousel .owl-dots {
   text-align: center;
