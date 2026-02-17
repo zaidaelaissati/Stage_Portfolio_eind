@@ -29,6 +29,57 @@
             var containerEl = document.querySelector('.portfolio__gallery');
             var mixer = mixitup(containerEl);
         }
+
+        /*------------------
+            Blog Post filter
+        --------------------*/
+        $('.blog__filter .filter-btn').on('click', function () {
+            // Remove active class from all filter buttons
+            $('.blog__filter .filter-btn').removeClass('active');
+            // Add active class to clicked button
+            $(this).addClass('active');
+            
+            // Get the filter value
+            var filterValue = $(this).data('filter');
+            
+            // Filter the blog posts - use CSS display property
+            $('.blog__post').each(function () {
+                var postTags = $(this).data('tags');
+                
+                if (filterValue === 'all') {
+                    // Show all posts
+                    $(this).css('display', 'block');
+                } else if (postTags && postTags.indexOf(filterValue) !== -1) {
+                    // Show post if it has the selected tag
+                    $(this).css('display', 'block');
+                } else {
+                    // Hide post
+                    $(this).css('display', 'none');
+                }
+            });
+            
+            // Reinitialize carousel after filtering
+            if ($('.blog__slider').length > 0) {
+                $('.blog__slider').owlCarousel('destroy');
+                $('.blog__slider').owlCarousel({
+                    loop: true,
+                    margin: 30,
+                    items: 1,
+                    dots: true,
+                    dotsEach: 1,
+                    smartSpeed: 1200,
+                    autoHeight: true,
+                    autoplay: false,
+                    nav: true,
+                    navText: ['<span class="arrow_left"></span>', '<span class="arrow_right"></span>'],
+                    responsive: {
+                        992: { items: 1 },
+                        768: { items: 1 },
+                        320: { items: 1 }
+                    }
+                });
+            }
+        });
     });
 
     /*------------------
@@ -105,7 +156,7 @@
         }
     });
 
-    /*------------------
+        /*------------------
         Latest Slider
     --------------------*/
     $(".latest__slider").owlCarousel({
@@ -123,6 +174,33 @@
             },
             768: {
                 items: 2
+            },
+            320: {
+                items: 1
+            }
+        }
+    });
+
+    /*------------------
+        Blog Slider
+    --------------------*/
+    $(".blog__slider").owlCarousel({
+        loop: true,
+        margin: 30,
+        items: 1,
+        dots: true,
+        dotsEach: 1,
+        smartSpeed: 1200,
+        autoHeight: true,
+        autoplay: false,
+        nav: true,
+        navText: ['<span class="arrow_left"></span>', '<span class="arrow_right"></span>'],
+        responsive: {
+            992: {
+                items: 1
+            },
+            768: {
+                items: 1
             },
             320: {
                 items: 1
