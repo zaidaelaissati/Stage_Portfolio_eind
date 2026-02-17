@@ -248,6 +248,35 @@
     });
 
     /*------------------
+        Stageopdracht Slider
+    --------------------*/
+    $(".stageopdracht__slider").owlCarousel({
+        loop: true,
+        margin: 20,
+        items: 1,
+        dots: true,
+        dotsEach: 1,
+        smartSpeed: 1200,
+        autoHeight: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        nav: true,
+        navText: ['<span class="arrow_left"></span>', '<span class="arrow_right"></span>'],
+        responsive: {
+            992: {
+                items: 1
+            },
+            768: {
+                items: 1
+            },
+            320: {
+                items: 1
+            }
+        }
+    });
+
+    /*------------------
         Video Popup
     --------------------*/
     $('.video-popup').magnificPopup({

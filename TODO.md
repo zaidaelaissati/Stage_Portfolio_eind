@@ -1,35 +1,28 @@
-# TODO - Fix Weekoverzichten Category Filtering
+# TODO - Navigation and Stageopdracht Section Updates
 
-## Task Summary
-The category filtering for weekoverzichten (weekly overviews) in index.html is not working because there's no JavaScript filter logic for blog posts.
+## Plan
 
-## Completed Tasks
+### 1. Update Navigation in index.html
+- Replace "Werkplek", "Mijn Project", "Documentatie" with single "Stageopdracht" link
+- Keep the rest: Home, Over Mij, Blog
 
-### ✅ Step 1: Update index.html filter buttons
-- Changed filter buttons to the requested categories:
-  - Alle Posts (all)
-  - Opstart (startup)
-  - Database
-  - Backup
-  - Meetings
-  - Teambuilding
-  - Linux
-  - Documentatie
+### 2. Create Stageopdracht Section in index.html
+- Create a new section `id="stageopdracht"` that combines:
+  - The existing "sfeerbeelden" slider (which already has the hover effect with text - exactly what user wants!)
+  - The content from werkplek, mijn-project, and documentatie sections
 
-### ✅ Step 2: Update blog post data-tags
-- Updated existing blog posts to use the new category tags:
-  - Week 2 post: opstart,database,meetings,documentatie
-  - Week 1 post: opstart,database,backup,meetings,linux
-  - Teambuilding post: teambuilding
-- Updated visible tags in blog posts to match
+### 3. Update Footer Links in index.html
+- Update the "Snelle links" section to include "Stageopdracht"
 
-### ✅ Step 3: Update main.js
-- Added filter functionality for blog posts
-- Filter uses data-tags attribute to filter posts when clicking filter buttons
+### 4. Update CSS if needed
+- Ensure the slider and hover effects work properly
 
-### ✅ Step 4: Verify CSS styling
-- Confirmed existing CSS styling for filter buttons and active state
+## Files to Edit
+- index.html (main edits)
+- css/style.css (if needed)
 
-## Files Edited:
-1. index.html - Updated filter buttons and blog post tags
-2. js/main.js - Added blog post filter functionality
+## Implementation Order
+1. Edit navigation in index.html
+2. Create/update Stageopdracht section in index.html  
+3. Update footer links
+4. Test and verify
