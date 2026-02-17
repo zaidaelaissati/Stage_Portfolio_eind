@@ -39,11 +39,12 @@
             // Add active class to clicked button
             $(this).addClass('active');
             
-            // Get the filter value
-            var filterValue = $(this).data('filter');
+            // Get the filter value - convert to lowercase for case-insensitive comparison
+            var filterValue = $(this).data('filter').toLowerCase();
             
             // Get all blog posts
             var $posts = $('.blog__posts .blog__post');
+            var visiblePosts = [];
             
             // Filter the blog posts
             $posts.each(function () {
@@ -55,6 +56,7 @@
                     if (filterValue === 'all') {
                         $post.removeClass('hidden-post');
                         $post.show();
+                        visiblePosts.push(this);
                     } else {
                         $post.addClass('hidden-post');
                         $post.hide();
@@ -62,26 +64,61 @@
                     return;
                 }
                 
-                // Split tags by comma and trim whitespace
+                // Split tags by comma, trim whitespace, and convert to lowercase
                 var tagsArray = postTags.split(',').map(function(tag) {
-                    return tag.trim();
+                    return tag.trim().toLowerCase();
                 });
                 
                 if (filterValue === 'all') {
                     // Show all posts
                     $post.removeClass('hidden-post');
                     $post.show();
+                    visiblePosts.push(this);
                 } else if (tagsArray.indexOf(filterValue) !== -1) {
                     // Show post if it has the selected tag
                     $post.removeClass('hidden-post');
                     $post.show();
+                    visiblePosts.push(this);
                 } else {
                     // Hide post
                     $post.addClass('hidden-post');
                     $post.hide();
                 }
             });
+            
+            // Just show/hide the posts - no slider re-initialization needed
+            // Owl carousel will automatically only show visible elements
+            console.log('Filter applied: ' + filterValue + ', Visible posts: ' + visiblePosts.length);
         });
+        
+        /*------------------
+            Blog Slider Initialize on page load
+        --------------------*/
+        if ($('.blog__slider').length > 0) {
+            $(".blog__slider").owlCarousel({
+                loop: true,
+                margin: 30,
+                items: 1,
+                dots: true,
+                dotsEach: 1,
+                smartSpeed: 1200,
+                autoHeight: true,
+                autoplay: false,
+                nav: true,
+                navText: ['<span class="arrow_left"></span>', '<span class="arrow_right"></span>'],
+                responsive: {
+                    992: {
+                        items: 1
+                    },
+                    768: {
+                        items: 1
+                    },
+                    320: {
+                        items: 1
+                    }
+                }
+            });
+        }
     });
 
     /*------------------
@@ -158,7 +195,7 @@
         }
     });
 
-        /*------------------
+    /*------------------
         Latest Slider
     --------------------*/
     $(".latest__slider").owlCarousel({
@@ -176,33 +213,6 @@
             },
             768: {
                 items: 2
-            },
-            320: {
-                items: 1
-            }
-        }
-    });
-
-    /*------------------
-        Blog Slider
-    --------------------*/
-    $(".blog__slider").owlCarousel({
-        loop: true,
-        margin: 30,
-        items: 1,
-        dots: true,
-        dotsEach: 1,
-        smartSpeed: 1200,
-        autoHeight: true,
-        autoplay: false,
-        nav: true,
-        navText: ['<span class="arrow_left"></span>', '<span class="arrow_right"></span>'],
-        responsive: {
-            992: {
-                items: 1
-            },
-            768: {
-                items: 1
             },
             320: {
                 items: 1
