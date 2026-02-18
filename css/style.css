@@ -2468,19 +2468,21 @@ body {
 }
 
 .project__card__icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.project__card__icon i {
+  font-size: 30px;
+  color: #00bfe7;
   width: 70px;
   height: 70px;
   background: rgba(0, 191, 231, 0.2);
   border-radius: 50%;
   line-height: 70px;
   text-align: center;
-  margin: 0 auto 20px;
-}
-
-.project__card__icon i {
-
-  font-size: 30px;
-  color: #00bfe7;
+  flex-shrink: 0;
 }
 
 .project__card h4 {
