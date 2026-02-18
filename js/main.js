@@ -39,8 +39,8 @@
             // Add active class to clicked button
             $(this).addClass('active');
             
-            // Get the filter value - convert to lowercase for case-insensitive comparison
-            var filterValue = $(this).data('filter').toLowerCase();
+            // Get the filter value directly from the attribute and convert to lowercase
+            var filterValue = $(this).attr('data-filter').toLowerCase().trim();
             
             // Get all blog posts
             var $posts = $('.blog__posts .blog__post');
@@ -48,10 +48,11 @@
             
             // Filter the blog posts
             $posts.each(function () {
-                var postTags = $(this).data('tags');
+                // Get tags directly from attribute to ensure consistency
+                var postTags = $(this).attr('data-tags');
                 var $post = $(this);
                 
-                if (!postTags) {
+                if (!postTags || postTags === '') {
                     // If no tags, show post only if filter is 'all'
                     if (filterValue === 'all') {
                         $post.removeClass('hidden-post');
