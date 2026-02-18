@@ -1394,7 +1394,7 @@ ol {
   position: absolute;
   right: -16px;
   top: 0px;
-  content: "/";
+  content: "";
 }
 .blog__item ul li:last-child {
   margin-right: 0;
