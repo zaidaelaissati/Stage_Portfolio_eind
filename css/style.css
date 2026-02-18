@@ -305,6 +305,8 @@ ol {
 
 .header__logo {
   padding: 30px 0;
+  width: 100px;
+  height: 100%;
 }
 .header__logo a {
   display: inline-block;
@@ -867,9 +869,12 @@ ol {
 
 .footer__top__logo {
   line-height: 40px;
+  width: 50%;
+  height: 50%;
 }
 .footer__top__logo a {
   display: inline-block;
+
 }
 
 .footer__top__social {
