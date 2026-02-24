@@ -3954,3 +3954,63 @@ width: 100%;
   }
 }
 
+/*======================
+  Profile Flip Card with Rotate + Flip Effect
+=======================*/
+.about__profile__flip-card {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 20px;
+  perspective: 1000px;
+}
+
+.about__profile__flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 50%;
+}
+
+.about__profile__flip-card:hover .about__profile__flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.about__profile__flip-card-front,
+.about__profile__flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #00bfe7;
+  box-shadow: 0 0 20px rgba(0, 191, 231, 0.4);
+}
+
+.about__profile__flip-card-front {
+  background-color: #100028;
+}
+
+.about__profile__flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about__profile__flip-card-back {
+  background-color: #100028;
+  transform: rotateY(180deg);
+}
+
+.about__profile__flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
