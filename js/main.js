@@ -12,6 +12,33 @@
 (function ($) {
 
     /*------------------
+        Typewriter Animation (Letter per letter)
+    --------------------*/
+    function typeWriter() {
+        var textElement = document.querySelector('.hero__text h2');
+        if (!textElement) return;
+        
+        // Get the original text
+        var text = textElement.textContent;
+        textElement.textContent = '';
+        textElement.style.display = 'inline';
+        
+        var i = 0;
+        
+        function type() {
+            if (i < text.length) {
+                textElement.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        
+        setTimeout(type, 500);
+    }
+    
+    typeWriter();
+
+    /*------------------
         Preloader
     --------------------*/
     $(window).on('load', function () {

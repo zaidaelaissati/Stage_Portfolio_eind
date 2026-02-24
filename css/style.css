@@ -2082,6 +2082,28 @@ ol {
     line-height: 40px;
   }
 
+   .hero__text h2 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
   .grid-sizer {
     width: calc(50% - 10px);
   }
@@ -2182,6 +2204,50 @@ ol {
 
 /* Import Fira Code voor terminal vibe */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+/*======================
+  Typewriter Animation
+=======================*/
+.typewriter-text {
+  display: inline;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ffffff;
+  animation: typing 2.5s steps(24) 0.5s forwards, blink-caret 0.75s step-end infinite;
+  width: 0;
+  color: #ffffff;
+}
+
+.typewriter-cursor {
+  display: inline;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 70px;
+  font-family: "Play", sans-serif;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #ffffff; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero__text h2 .typewriter-text,
+.hero__text h2 .typewriter-cursor {
+  animation-delay: 0.5s;
+}
 
 .hero__item {
   height: 684px;
