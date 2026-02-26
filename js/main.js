@@ -60,7 +60,7 @@
         /*------------------
             Blog Post filter
         --------------------*/
-        $('.blog__filter .filter-btn').on('click', function () {
+        $('.blog__filter .filter-btn').on('click', function () { 
             // Remove active class from all filter buttons
             $('.blog__filter .filter-btn').removeClass('active');
             // Add active class to clicked button
