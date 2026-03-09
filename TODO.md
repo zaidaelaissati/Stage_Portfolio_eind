@@ -1,28 +1,32 @@
-# TODO - Navigation and Stageopdracht Section Updates
+# TODO - Collapsible Blog Posts Implementation
 
-## Plan
+## Task
+Create a collapsible folder-like arrow for weekoverzicht section:
+- Show first 3 blog posts initially
+- Add "see more..." arrow button that expands to show all posts
+- Smooth animation for expand/collapse
 
-### 1. Update Navigation in index.html
-- Replace "Werkplek", "Mijn Project", "Documentatie" with single "Stageopdracht" link
-- Keep the rest: Home, Over Mij, Blog
+## Implementation Steps
 
-### 2. Create Stageopdracht Section in index.html
-- Create a new section `id="stageopdracht"` that combines:
-  - The existing "sfeerbeelden" slider (which already has the hover effect with text - exactly what user wants!)
-  - The content from werkplek, mijn-project, and documentatie sections
+### Step 1: Add CSS styles for collapsible button ✅
+- Created folder-arrow styling
+- Added animation transitions
+- Styled the expand/collapse states
 
-### 3. Update Footer Links in index.html
-- Update the "Snelle links" section to include "Stageopdracht"
+### Step 2: Modify HTML structure ✅
+- Wrapped blog posts in a container with rows
+- Added "load more" button after 3rd post
+- Added class to distinguish visible vs hidden posts
 
-### 4. Update CSS if needed
-- Ensure the slider and hover effects work properly
+### Step 3: Add JavaScript functionality ✅
+- Handle click event on load more button
+- Toggle visibility of remaining posts
+- Animate the arrow rotation
 
-## Files to Edit
-- index.html (main edits)
-- css/style.css (if needed)
+## Files Edited
+1. `css/style.css` - Added collapsible button styles
+2. `index.html` - Added button and wrapper structure with grid layout
+3. `js/main.js` - Added expand/collapse functionality
 
-## Implementation Order
-1. Edit navigation in index.html
-2. Create/update Stageopdracht section in index.html  
-3. Update footer links
-4. Test and verify
+## Status: ✅ COMPLETED
+

@@ -318,7 +318,7 @@
                         <button class="filter-btn" data-filter="database">Database</button>
                         <button class="filter-btn" data-filter="backup">Backup</button>
                         <button class="filter-btn" data-filter="meetings">Meetings</button>
-                        <button class="filter-btn" data-filter="teambuilding">Teambuilding</button>
+                        <button class="filter-btn" data-filter="activiteiten">Activiteiten</button>
                         <button class="filter-btn" data-filter="linux">Linux</button>
                         <button class="filter-btn" data-filter="documentatie">Documentatie</button>
                         <button class="filter-btn" data-filter="docker">Docker</button>
@@ -328,7 +328,9 @@
 
             <!-- Blog Posts -->
             <div class="blog__posts">
-                  <!-- Week 1 Post -->
+                <!-- First 3 posts (visible by default) -->
+                
+                <!-- Week 1 Post -->
                 <div class="blog__post" data-tags="opstart,database,backup,meetings,linux">
                     <div class="blog__item latest__item">
                         <div class="blog__tags">
@@ -352,7 +354,6 @@
                                 <li>Opleidingstraining modules 1 t/m 3 gevolgd</li><br>
                                 <li>Meeting: uitleg database project</li><br>
                                 <li>opzoekwerk: postgresql, linux, point in time recovery</li>
-                                
                             </ul>
                         </div>
                         <div class="blog__milestones">
@@ -361,6 +362,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- Week 2 Post -->
                 <div class="blog__post" data-tags="opstart,database,meetings,documentatie,backup">
                     <div class="blog__item latest__item">
@@ -392,9 +394,9 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- week 3-->
-                    <div class="blog__post" data-tags="database,meetings,documentatie,backup">
+                
+                <!-- Week 3 Post -->
+                <div class="blog__post" data-tags="database,meetings,documentatie,backup">
                     <div class="blog__item latest__item">
                         <div class="blog__tags">
                             <span class="blog__tag">Database</span>
@@ -407,17 +409,16 @@
                             <li>16/02/26 tot 20/02/26</li>
                             <p>Deze week stond in het teken van verdiepen en optimaliseren. Ik onderzocht verschillende oplossingen voor permission-problemen en foutmeldingen, testte mijn opstelling lokaal en breidde dit daarna uit naar Docker-containers.</p>
                         </ul>
-
-                            <div class="blog__highlights">
-                           <h5>Wat heb ik gedaan:</h5>
-                     <ul>
-                        <li>Alternatieve methodes onderzocht om permission-problemen en foutmeldingen (errors) op te lossen</li> <br>
-                        <li>Technische artikels en documentatie geraadpleegd om eerst een stabiele lokale opstelling uit te werken</li><br>
-                        <li>De oplossing nadien getest lokaal getest</li><br>
-                        <li>Documentatie verder uitgewerkt en gestructureerd</li><br>
-                        <li>Meeting voorbereid en een demo gegeven van de lokale backup-opstelling</li>
-                    </ul>
-                    </div>
+                        <div class="blog__highlights">
+                       <h5>Wat heb ik gedaan:</h5>
+                 <ul>
+                    <li>Alternatieve methodes onderzocht om permission-problemen en foutmeldingen (errors) op te lossen</li> <br>
+                    <li>Technische artikels en documentatie geraadpleegd om eerst een stabiele lokale opstelling uit te werken</li><br>
+                    <li>De oplossing nadien getest lokaal getest</li><br>
+                    <li>Documentatie verder uitgewerkt en gestructureerd</li><br>
+                    <li>Meeting voorbereid en een demo gegeven van de lokale backup-opstelling</li>
+                </ul>
+                        </div>
                        <div class="blog__lessons">
                             <h5>Lessons Learned:</h5>
                             <p>Deze week leerde ik hoe belangrijk het is om eerst een stabiele lokale testomgeving op te zetten voordat je overstapt naar Docker. Daarnaast kreeg ik meer inzicht in het oplossen van permission-problemen en het analyseren van foutmeldingen.</p>
@@ -428,30 +429,37 @@
                                 ✅ Werkende lokale database-backup<br>
                                 ✅ Succesvolle demo van de oplossing
                             </p>
-                       
-                    </div>
-                </div>
-            
-            </div>
-
-
-
-                <!-- week 4-->
-                    <div class="blog__post" data-tags="database,meetings,documentatie,docker,backup">
-                    <div class="blog__item latest__item">
-                        <div class="blog__tags">
-                            <span class="blog__tag">Database</span>
-                            <span class="blog__tag">Docker</span>
-                            <span class="blog__tag">Meetings</span>
-                            <span class="blog__tag">Documentatie</span>
-                            <span class="blog__tag">Backup</span>
                         </div>
-                        <h4>Week 4 - Docker Volumes & PostgreSQL 16</h4>
-                         <ul>
-                            <li>23/02/26 tot 27/02/26</li>
-                        </ul>
-                        <p>Deze week heb ik mijn Docker-kennis uitgebreid met volumes voor persistente data-opslag. Ik heb de documentatie verder uitgewerkt, een demo gegeven van Docker volumes tijdens een meeting, en de volledige opstelling opnieuw opgebouwd met PostgreSQL versie 16 van het bedrijf. Ook kreeg ik uitleg over de volgende milestone en begon ik met werken aan een echte grote database van het bedrijf.</p>
-
+                    </div>
+                
+ </div>
+                               <!-- Load More Button -->
+                <div class="load-more-wrapper">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        <span class="btn-text">Bekijk meer weekoverzichten</span>
+                        <span class="arrow-icon"><i class="fa fa-chevron-down"></i></span>
+                    </button>
+                    <span class="posts-count" id="postsCount">Toon 1-3 van 5 weekoverzichten</span>
+                </div>
+                
+                <!-- Hidden posts (shown after clicking load more) -->
+                <div class="blog__posts-hidden" id="hiddenPosts">
+                    
+                    <!-- Week 4 Post -->
+                    <div class="blog__post" data-tags="database,meetings,documentatie,docker,backup">
+                        <div class="blog__item latest__item">
+                            <div class="blog__tags">
+                                <span class="blog__tag">Database</span>
+                                <span class="blog__tag">Docker</span>
+                                <span class="blog__tag">Meetings</span>
+                                <span class="blog__tag">Documentatie</span>
+                                <span class="blog__tag">Backup</span>
+                            </div>
+                            <h4>Week 4 - Docker Volumes & PostgreSQL 16</h4>
+                             <ul>
+                                <li>23/02/26 tot 27/02/26</li>
+                            </ul>
+                            <p>Deze week heb ik mijn Docker-kennis uitgebreid met volumes voor persistente data-opslag. Ik heb de documentatie verder uitgewerkt, een demo gegeven van Docker volumes tijdens een meeting, en de volledige opstelling opnieuw opgebouwd met PostgreSQL versie 16 van het bedrijf. Ook kreeg ik uitleg over de volgende milestone en begon ik met werken aan een echte grote database van het bedrijf.</p>
                             <div class="blog__highlights">
                            <h5>Wat heb ik gedaan:</h5>
                      <ul>
@@ -462,47 +470,43 @@
                         <li>Uitleg gekregen over de volgende milestone</li><br>
                         <li>Begonnen met werken in de echte grote database van het bedrijf (eerst lokaal)</li>
                     </ul>
-                    </div>
-                       <div class="blog__lessons">
-                            <h5>Lessons Learned:</h5>
-                            <p>Deze week leerde ik hoe cruciaal volumes zijn in Docker voor het behouden van data tussen container-herstarts. Ook ontdekte ik de verschillen tussen PostgreSQL versies en hoe je een bestaande opstelling kunt migreren naar een nieuwere versie. Het werken met echte bedrijfsdata geeft een waardevol inzicht in de praktijk en de complexiteit van productie-omgevingen.</p>
+                            </div>
+                               <div class="blog__lessons">
+                                    <h5>Lessons Learned:</h5>
+                                    <p>Deze week leerde ik hoe cruciaal volumes zijn in Docker voor het behouden van data tussen container-herstarts. Ook ontdekte ik de verschillen tussen PostgreSQL versies en hoe je een bestaande opstelling kunt migreren naar een nieuwere versie. Het werken met echte bedrijfsdata geeft een waardevol inzicht in de praktijk en de complexiteit van productie-omgevingen.</p>
+                                </div>
+                                  <div class="blog__milestones">
+                                    <h5>Milestones:</h5>
+                                   <p>
+                                        ✅ Docker volumes succesvol geïmplementeerd en getest<br>
+                                        ✅ PostgreSQL 16 opstelling werkend en compatibel<br>
+                                        ✅ Documentatie volledig bijgewerkt<br>
+                                        ✅ Voorbereiding volgende milestone gestart
+                                    </p>
+                                </div>
                         </div>
-                          <div class="blog__milestones">
-                            <h5>Milestones:</h5>
-                           <p>
-                                ✅ Docker volumes succesvol geïmplementeerd en getest<br>
-                                ✅ PostgreSQL 16 opstelling werkend en compatibel<br>
-                                ✅ Documentatie volledig bijgewerkt<br>
-                                ✅ Voorbereiding volgende milestone gestart
-                            </p>
-
+                    </div>
+                    
+                    <!-- Week 5 placeholder -->
+                    <div class="blog__post" data-tags="activiteiten">
+                        <div class="blog__item latest__item">
+                            <div class="blog__tags">
+                                <span class="blog__tag">Activiteiten</span>
+                            </div>
+                            <h4>Binnenkort meer...</h4>
+                            <ul>
+                                <li>Verwacht: Week 5-6</li>
+                            </ul>
+                            
+                            <p>Ik houd mijn notitieboekje bij en zal binnenkort meer interessante updates delen over mijn stage-ervaringen!</p>
+                            <div class="blog__tips">
+                                <h5>Tips voor medestudenten:</h5>
+                                <p>💡 Houd een digitaal notitieboekje bij tijdens de dag - zo vergeet je niets!</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            
             </div>
-
-            
-                <!-- week 5-->
-
-
-                <!-- More posts placeholder -->
-                <div class="blog__post" data-tags="teambuilding">
-                    <div class="blog__item latest__item">
-                        <div class="blog__tags">
-                            <span class="blog__tag">Teambuilding</span>
-                        </div>
-                        <h4>Binnenkort meer...</h4>
-                        <ul>
-                            <li>Verwacht: Week 5-6</li>
-                        </ul>
-                        
-                        <p>Ik houd mijn notitieboekje bij en zal binnenkort meer interessante updates delen over mijn stage-ervaringen!</p>
-                        <div class="blog__tips">
-                            <h5>Tips voor medestudenten:</h5>
-                            <p>💡 Houd een digitaal notitieboekje bij tijdens de dag - zo vergeet je niets!</p>
-                        </div>
-                    </div>
-                </div>
         </div>
     </section>
     <!-- Blog Section End -->

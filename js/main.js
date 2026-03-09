@@ -305,6 +305,44 @@
     });
 
     /*------------------
+        Load More Button - Collapsible Blog Posts
+    --------------------*/
+    // Wait for DOM to be ready
+    $(document).ready(function() {
+        const loadMoreBtn = $('#loadMoreBtn');
+        const hiddenPosts = $('#hiddenPosts');
+        const postsCount = $('#postsCount');
+        let isExpanded = false;
+        
+        // Total posts count
+        const totalPosts = 5;
+        const initialVisible = 3;
+        
+        loadMoreBtn.on('click', function() {
+            isExpanded = !isExpanded;
+            
+            if (isExpanded) {
+                // Show hidden posts
+                hiddenPosts.addClass('visible');
+                loadMoreBtn.addClass('expanded');
+                loadMoreBtn.find('.btn-text').text('Toon minder');
+                postsCount.text('Toon alle ' + totalPosts + ' weekoverzichten');
+            } else {
+                // Hide posts
+                hiddenPosts.removeClass('visible');
+                loadMoreBtn.removeClass('expanded');
+                loadMoreBtn.find('.btn-text').text('Bekijk meer weekoverzichten');
+                postsCount.text('Toon 1-' + initialVisible + ' van ' + totalPosts + ' weekoverzichten');
+                
+                // Scroll back to the button smoothly
+                $('html, body').animate({
+                    scrollTop: loadMoreBtn.offset().top - 100
+                }, 400);
+            }
+        });
+    });
+
+    /*------------------
         Video Popup
     --------------------*/
     $('.video-popup').magnificPopup({
