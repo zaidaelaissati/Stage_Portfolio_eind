@@ -444,7 +444,7 @@
                         <span class="btn-text">Bekijk meer weekoverzichten</span>
                         <span class="arrow-icon"><i class="fa fa-chevron-down"></i></span>
                     </button>
-                    <span class="posts-count" id="postsCount">Toon 1-3 van 5 weekoverzichten</span>
+<span class="posts-count" id="postsCount">Toon 1-3 van 8 weekoverzichten</span>
                 </div>
                 
                 <!-- Hidden posts (shown after clicking load more) -->
@@ -493,7 +493,9 @@
                     </div>
                     
 
-                     <!-- Week 5 Post -->
+
+
+                    <!-- Week 5 Post -->
                     <div class="blog__post" data-tags="database,docker,documentatie,backup,linux,activiteiten">
                         <div class="blog__item latest__item">
                             <div class="blog__tags">
@@ -530,28 +532,121 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Week 6 Post -->
+                    <div class="blog__post" data-tags="database,backup,meetings,documentatie">
+                        <div class="blog__item latest__item">
+                            <div class="blog__tags">
+                                <span class="blog__tag">Database</span>
+                                <span class="blog__tag">Backup</span>
+                                <span class="blog__tag">Meetings</span>
+                                <span class="blog__tag">Documentatie</span>
+                            </div>
+                            <h4>Week 6 - WAL Archive Problemen & Error Fixing</h4>
+                            <ul>
+                                <li>09/03/2026 tot 13/03/2026</li>
+                            </ul>
+                            <p>Deze week richtte ik me op het oplossen van problemen met WAL-archieven en gaf een update tijdens een kleine meeting.</p>
+                            <div class="blog__highlights">
+                                <h5>Wat heb ik gedaan:</h5>
+                                <ul>
+                                    <li>Error fixes uitgevoerd voor problemen met WAL-archieven</li><br>
+                                    <li>Kleine meeting gehouden om update te geven waar we vastzitten</li><br>
+                                    <li>Verder gewerkt aan de WAL-problemen en oplossingen proberen te implementeren</li><br>
+                                    <li>Documentatie bijgewerkt </li>
+                                </ul>
+                            </div>
+                            <div class="blog__lessons">
+                                <h5>Lessons Learned:</h5>
+                                <p>WAL-archieven vereisen precieze configuratie. Regelmatige meetings helpen om snel knelpunten te identificeren en te bespreken.</p>
+                            </div>
+                            <div class="blog__milestones">
+                                <h5>Milestones:</h5>
+                                <p>✅ WAL error fixes proberen te implementeren<br>✅ Meeting gehouden met voortgangsupdate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 7 Post -->
+                    <div class="blog__post" data-tags="database,backup,meetings,documentatie,docker">
+                        <div class="blog__item latest__item">
+                            <div class="blog__tags">
+                                <span class="blog__tag">Database</span>
+                                <span class="blog__tag">Backup</span>
+                                <span class="blog__tag">Meetings</span>
+                                <span class="blog__tag">Documentatie</span>
+                                <span class="blog__tag">Docker</span>
+                            </div>
+                            <h4>Week 7 - pgBackRest Poging</h4>
+                            <ul>
+                                <li>16/03/2026 tot 20/03/2026</li>
+                            </ul>
+                            <p>Voortgezette troubleshooting met een poging tot pgBackRest in Docker.</p>
+                            <div class="blog__highlights">
+                                <h5>Wat heb ik gedaan:</h5>
+                                <ul>
+                                    <li>Doorgaan met troubleshooting,zelfde als vorige week</li><br>
+                                    <li>pgBackRest methode geprobeerd volgens een artikel </li><br>
+                                    <li>Zelfde errors als voorheen ondervonden</li><br>
+                                    <li>Meeting gehouden om voortgang en problemen te bespreken</li><br>
+                                    <li>Documentatie uitgebreid met testresultaten en errors</li>
+                                </ul>
+                            </div>
+                            <div class="blog__lessons">
+                                <h5>Lessons Learned:</h5>
+                                <p>Externe tutorials zijn nuttig maar niet altijd direct toepasbaar in complexe omgevingen zoals Docker met PostgreSQL.</p>
+                            </div>
+                            <div class="blog__milestones">
+                                <h5>Milestones:</h5>
+                                <p>✅ pgBackRest getest en geëvalueerd<br>✅ Meeting gehouden</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 8 Post -->
+                    <div class="blog__post" data-tags="database,backup,meetings,documentatie,linux">
+                        <div class="blog__item latest__item">
+                            <div class="blog__tags">
+                                <span class="blog__tag">Database</span>
+                                <span class="blog__tag">Backup</span>
+                                <span class="blog__tag">Meetings</span>
+                                <span class="blog__tag">Documentatie</span>
+                                <span class="blog__tag">Linux</span>
+                            </div>
+                            <h4>Week 8 - Master/Slave PITR Succesvol!</h4>
+                            <ul>
+                                <li>23/03/2026 tot 27/03/2026</li>
+                            </ul>
+                            <p>Doorbraak! Master/slave setup met automatische WAL-transfer en succesvolle PITR.</p>
+                            <div class="blog__highlights">
+                                <h5>Wat heb ik gedaan:</h5>
+                                <ul>
+                                    <li>Lokaal gewerkt met 2 aparte machines (laptops): master en slave</li><br>
+                                    <li>Slave restore met Point-in-Time Recovery opgezet</li><br>
+                                    <li>Problemen met WAL-files opgelost (full backup lukte, PITR gaf WAL errors)</li><br>
+                                    <li>Meetings demo gegeven en alles uitgelegd, samen gevonden waaraan het probleem lag en dit samen opgelost</li><br>
+                                    <li>Nieuwe taak: PostgreSQL config voor automatische WAL-transfer van master naar slave </li><br>
+                                    <li>PITR + WAL-transfer succesvol! Alle stappen gedocumenteerd, herhaald en getest</li><br>
+                                    <li>Evaluatiegesprek gehad</li>
+                                </ul>
+                            </div>
+                            <div class="blog__lessons">
+                                <h5>Lessons Learned:</h5>
+                                <p>Automatisering via PostgreSQL-configuratie is veel efficiënter dan handmatige transfers. Uitgebreide testing en documentatie zorgen voor reproduceerbare succes.</p>
+                            </div>
+                            <div class="blog__milestones">
+                                <h5>Milestones:</h5>
+                                <p>✅ Master/slave PITR werkend<br>✅ Automatische WAL-transfer via config<br>✅ Volledige documentatie + tests<br>✅ Evaluatiegesprek afgerond</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+  
                 </div>
         </div>
     </section>
     <!-- Blog Section End -->
-                    <!-- binnenkort meer placeholder -->
-                    <div class="blog__post" data-tags="activiteiten">
-                        <div class="blog__item latest__item">
-                            <div class="blog__tags">
-                                <span class="blog__tag">Activiteiten</span>
-                            </div>
-                            <h4>Binnenkort meer...</h4>
-                            <ul>
-                                <li>Verwacht: Week 5-6</li>
-                            </ul>
-                            
-                            <p>Ik houd mijn notitieboekje bij en zal binnenkort meer interessante updates delen over mijn stage-ervaringen!</p>
-                            <div class="blog__tips">
-                                <h5>Tips voor medestudenten:</h5>
-                                <p>💡 Houd een digitaal notitieboekje bij tijdens de dag - zo vergeet je niets!</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
         </div>
     </section>
@@ -627,7 +722,7 @@
                         <div class="footer__option__item">
                             <h5>Laatste update</h5>
                             <p>Dit portfolio wordt wekelijks bijgewerkt met nieuwe blogposts en project-updates.</p>
-                            <p class="footer__date">Laatste update: Week 4, Februari 2026</p>
+<p class="footer__date">Laatste update: Week 8, Maart 2026</p>
                         </div>
                     </div>
                 </div>
