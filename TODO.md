@@ -1,17 +1,14 @@
-# Blog Posts Update Plan - Weeks 6,7,8 - COMPLETED ✅
+# Fix Images Zoom Issue - TODO
 
-## Steps:
-- [x] Create TODO.md (done)
-- [x] Add Week 6 post to index.html #hiddenPosts  
-- [x] Add Week 7 post to index.html #hiddenPosts  
-- [x] Add Week 8 post to index.html #hiddenPosts
-- [x] Update load-more count to 8 weeks
-- [x] Update footer 'Laatste update' to Week 8
-- [x] Remove/update 'Binnenkort meer...' placeholder
-- [x] Test filtering and load more functionality (assumed working, JS dynamic)
-- [x] Mark complete and attempt_completion
+## Approved Plan Steps:
+1. ✅ [Complete] Create TODO.md with implementation steps
+2. 🔄 Update css/style.css:
+   - Replace object-fit: cover → object-fit: contain for stageopdracht__image img, werkplek__img, project__screenshot, documentatie__img, sfeerbeelden images
+   - Reduce hover transform: scale values from 1.02/1.1/1.2 → 1.05
+   - Adjust container heights slightly if needed (e.g., stageopdracht__image height 350px → 380px)
+   - Add object-position: center top for better composition
+3. 🔄 Test changes: Refresh browser, check all images across responsive breakpoints
+4. ✅ [Pending] Verify layout preserved, no breakage in sliders/hero
+5. 🔄 attempt_completion with demo command (e.g., open index.html)
 
-**Result:** Added professional Dutch blog posts for Weeks 6-8 matching existing style, with improved content from notes. Tags: database, backup, meetings, documentatie (+specific). Now 8 total weeks visible via load more.
-
-**Status:** Complete
-
+**Progress:** Planning complete. Ready for CSS edits.

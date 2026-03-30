@@ -2841,12 +2841,13 @@ body {
 .sfeerbeelden__image img {
   width: 100%;
   height: 100%;
-  object-fit: contain; 
+  object-fit: contain;
+  object-position: center top;
   transition: transform 0.5s ease;
 }
 
 .sfeerbeelden__item:hover .sfeerbeelden__image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .sfeerbeelden__overlay {
@@ -3047,8 +3048,9 @@ body {
 /* Werkplek images */
 .werkplek__img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 220px;
+  object-fit: contain;
+  object-position: center top;
   border-radius: 10px;
   margin-bottom: 20px;
   border: 2px solid rgba(0, 191, 231, 0.3);
@@ -3057,15 +3059,16 @@ body {
 
 .werkplek__img:hover {
   border-color: #00bfe7;
-  transform: scale(1.02);
+  transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 191, 231, 0.3);
 }
 
 /* Project screenshots */
 .project__screenshot {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 170px;
+  object-fit: contain;
+  object-position: center top;
   border-radius: 10px;
   margin-top: 15px;
   border: 2px solid rgba(0, 191, 231, 0.3);
@@ -3074,7 +3077,7 @@ body {
 
 .project__screenshot:hover {
   border-color: #00bfe7;
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 /* Documentatie image */
@@ -3205,8 +3208,9 @@ body {
 
 .kijkje-achter-de-schermen .project__card .werkplek__img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: 270px;
+  object-fit: contain;
+  object-position: center top;
   border-radius: 10px;
   margin-bottom: 20px;
   border: 2px solid rgba(0, 191, 231, 0.3);
@@ -3215,7 +3219,7 @@ body {
 
 .kijkje-achter-de-schermen .project__card .werkplek__img:hover {
   border-color: #00bfe7;
-  transform: scale(1.02);
+  transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 191, 231, 0.3);
 }
 
@@ -3382,8 +3386,9 @@ body {
 /* Project Screenshot */
 .kijkje-achter-de-schermen .project__screenshot {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 200px;
+  object-fit: contain;
+  object-position: center top;
   border-radius: 10px;
   margin-top: 20px;
   border: 2px solid rgba(0, 191, 231, 0.3);
@@ -3625,20 +3630,20 @@ body {
 .stageopdracht__image {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 380px;
   overflow: hidden;
 }
 
 .stageopdracht__image img {
-width: 100%;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center top;
   transition: transform 0.5s ease;
 }
 
 .stageopdracht__item:hover .stageopdracht__image img {
-  transform: scale(1.02);
- 
+  transform: scale(1.05);
 }
 
 .stageopdracht__overlay {
