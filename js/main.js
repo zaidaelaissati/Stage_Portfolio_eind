@@ -315,7 +315,7 @@
         let isExpanded = false;
         
         // Total posts count
-        const totalPosts = 15;
+        const totalPosts = 16;
         const initialVisible = 3;
         
         loadMoreBtn.on('click', function() {
